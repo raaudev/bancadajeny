@@ -1,0 +1,495 @@
+@charset "UTF-8";
+
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+
+:root{
+    --fonte1: 'Kanit', sans-serif;
+        
+    --cor1: #E6E6FA;
+    --cor2: #FFC0CB;
+    --cor3: #fff;
+    --cor4: #000;
+}
+
+/* estilo geral */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fonte1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor3);
+    height: 100vh;
+    color: var(--cor4);
+    overflow-x: hidden;
+    font-family: var(--fonte1);
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+
+h2.titulo {
+    color: var(--cor2);
+    font-size: 35px;
+    text-align: center;
+}
+
+h2.titulo span {
+    color: var(--cor4);
+}
+
+.btn-contato button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--cor2);
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 1.2s;
+}
+
+.btn-social{
+    text-align: center;
+}
+
+.btn-social button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--cor1);
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: .2s;
+}
+
+.btn-voltar-topo{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--cor1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 1.2s;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+
+/* Estilo cabeçalho */
+
+header {
+    padding: 15px 4%;
+    position: fixed;
+    width: 100vw;
+    z-index: 2;
+    background-color: var(--cor1);
+}
+
+
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    color: var(--cor4)
+}
+
+header .logo > h2{
+    font-size: 1.5rem;
+}
+
+header .logo > h2 > span {
+    color: var(--cor2)
+}
+
+header a {
+    color: var(--cor4);
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header nav.menu-desktop a:hover{
+    color: var(--cor2);
+    transform: scale(1.2);
+        
+}
+
+header nav ul{
+    list-style-type: none;    
+}
+
+header nav.menu-desktop ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+
+
+/* Estilo menu mobile */
+
+.btn-abrir-menu i{
+    color: var(--cor2);
+    font-size: 40px;
+}
+
+.menu-mobile{
+    background-color: var(--cor1);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+.menu-mobile .btn-fechar{
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i{
+    color: var(--cor2);
+    font-size: 30px;
+    
+}
+
+.menu-mobile nav ul{
+    text-align: right;
+}
+
+.menu-mobile nav ul li a{
+    color: var(--cor3);
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}
+
+.menu-mobile nav ul li a:hover{
+    background-color: var(--cor1);
+    color: var(--cor2);
+}
+
+.overlay-menu{
+    background-color: var(--cor7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+
+.btn-abrir-menu{
+    display: none;
+}
+
+/* Estilo do topo do site */
+
+section.topo-do-site{
+    padding: 40px 4%;
+    height: 100%;
+    width: 100%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.txt-topo-site, .img-topo-site {
+    padding: 200px 4%;
+}
+
+.img-topo-site {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.topo-do-site h1{
+    color: var(--cor2);
+    font-size: 42px;
+    line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span{
+    color: var(--cor4);
+}
+
+.topo-do-site .txt-topo-site p{
+    color: var(--cor4);
+    padding: 40px 0;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.topo-do-site .img-topo-site img{
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+.img-topo-site img{
+    height: 350px;
+    width: 350px;
+    
+}
+
+
+@keyframes flutuar {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+
+/* estilo dos serviços */
+
+section#servicos{
+    padding: 80px 4%;
+}
+
+section#servicos .flex {
+    gap: 90px;
+    justify-content: center;
+    align-items: center;
+}
+
+#servicos .servicos-box {
+    color: var(--cor4);
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    width: 50%;
+    transition: 1.2s;
+}
+
+#servicos .servicos-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 16px var(--cor1);
+}
+
+#servicos .servicos-box i {
+    font-size: 50px;
+    color: var(--cor1);
+}
+
+#servicos .servicos-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.maca{
+    width: 200px;
+    height: 200px;
+}
+
+p span{
+    color: red;
+}
+
+/* estilo projetos */
+
+section#projetos{
+    padding: 80px 4%;
+}
+
+section#projetos .flex{
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.img-port{
+    background-color: var(--cor1);
+    width: 360px;
+    height: 460px;
+    border-radius: 40px;
+    box-shadow: 0 0 16px var(--cor1);
+    text-align: center;
+}
+
+.img-port img{
+    width: 150px;
+    height: 150px;
+    margin: 60px;
+    mix-blend-mode: multiply;
+}
+
+
+/* Estilo do rodapé */
+
+footer{
+    padding: 40px 4%;      
+}
+
+footer .flex{
+    justify-content: space-between;
+}
+
+footer .logo-footer {
+    color: var(--cor4)
+}
+
+.borda{
+    border-top: 2px solid var(--cor1);
+}
+
+footer .logo-footer > h2{
+    font-size: 1.5rem;
+}
+
+footer .logo-footer > h2 > span {
+    color: var(--cor2)
+}
+
+footer .line-footer{
+    padding: 20px 0;
+}
+
+footer .line-footer p{
+    color: var(--cor2);
+    text-align: center;
+}
+
+/* responsivo */
+
+@media screen and (max-width: 1024px){
+    /* classes gerais */
+    body{
+       overflow-x: hidden; 
+    }
+    
+    .flex{
+        flex-direction: column;
+    }
+    
+    h2.titulo{
+        font-size: 28px;
+    }
+
+    /* estilo cabeçalho */
+    
+    .menu-desktop, .desktop{
+        display: none;
+    }
+    
+    .btn-abrir-menu{
+        display: block;
+    }
+    
+    .menu-mobile .btn-contato{
+        text-align: center;
+        padding: 20px 8%;
+    }
+    
+    /* estilo topo do site */   
+    
+    .topo-do-site .flex{
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+    
+    .txt-topo-site{
+        padding: 20px 4%;
+        margin: 0;
+    }
+    
+    .topo-do-site h1{
+        font-size: 30px;
+    }
+    
+    .topo-do-site h1 span{
+        display: inline-block;
+    }
+        
+    .img-topo-site{
+        padding: 60px 4%;
+        margin: 0;
+    }
+    
+    /* estilo serviços */
+    
+    #servicos .servicos-box{
+        padding: 40px 8%;
+        width: 75%;
+    } 
+    
+    /* estilo projetos */
+    
+    section#projetos{
+        padding: 80px 8%;
+    }
+    
+    section#projetos .flex{
+        gap: 40px;
+    }
+    
+    .img-port{
+        width: 75%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    
+    /* rodapé */
+    
+    footer .flex{
+        flex-direction: column;
+    }
+    
+    footer .logo-footer{
+        text-align: center;
+    }
+    
+    footer .btn-social{
+        padding: 20px;
+    }
+    
+    /* main */
+    
+    .btn-voltar-topo{
+        right: 20px;
+        font-size: 16px;
+    }
+}
